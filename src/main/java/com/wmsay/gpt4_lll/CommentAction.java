@@ -40,7 +40,7 @@ public class CommentAction extends AnAction {
             }
         }
 
-        String model = "gpt-3.5-turbo";
+        String model = "gpt-4";
         String replyLanguage = CommonUtil.getSystemLanguage();
         Project project = e.getProject();
         if (project != null) {

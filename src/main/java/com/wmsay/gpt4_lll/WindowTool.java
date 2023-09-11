@@ -35,7 +35,6 @@ public class WindowTool implements ToolWindowFactory {
     private static final JEditorPane readOnlyTextArea = new JEditorPane();
     private JRadioButton gpt4Option ;
     private JRadioButton gpt35TurboOption ;
-    private JRadioButton codeOption;
 
     public static volatile Boolean isGenerating=false;
 
@@ -49,22 +48,16 @@ public class WindowTool implements ToolWindowFactory {
         JPanel radioButtonPanel = new JPanel(new GridBagLayout());
         gpt4Option = new JRadioButton("gpt-4");
         gpt35TurboOption = new JRadioButton("gpt-3.5-turbo");
-        codeOption = new JRadioButton("code-davinci-002");
-        codeOption.setToolTipText("这是一个专门为代码训练的Gpt3.5模型，token是普通的3.5turbo的2倍，笔者正在努力开发中");
-        codeOption.setEnabled(false);
 
         ButtonGroup buttonGroup = new ButtonGroup();
         buttonGroup.add(gpt4Option);
         buttonGroup.add(gpt35TurboOption);
-        buttonGroup.add(codeOption);
         c.gridy = 0;
         c.weightx = 0.33;
         c.weighty = 0.05;  // 10% of the vertical space
         radioButtonPanel.add(gpt4Option, c);
         c.gridx = 1;
         radioButtonPanel.add(gpt35TurboOption, c);
-        c.gridx = 2;
-        radioButtonPanel.add(codeOption, c);
         c.gridx = 0;
         c.gridy = 0;
         c.gridwidth = GridBagConstraints.REMAINDER;  // span across all columns
@@ -123,7 +116,7 @@ public class WindowTool implements ToolWindowFactory {
 
                 ChatContent chatContent= new ChatContent();
                 chatContent.setMessages(GenerateAction.chatHistory);
-                chatContent.setModel("gpt-3.5-turbo");
+                chatContent.setModel("gpt-4");
                     new Thread(new Runnable() {
                         @Override
                         public void run() {

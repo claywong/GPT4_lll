@@ -11,7 +11,7 @@ public class ChatContent {
     @Expose
     private List<Message> messages;
     @Expose
-    private String model="gpt-3.5-turbo";
+    private String model="gpt-4";
 
     private Double temperature=1.0;
 

@@ -36,7 +36,7 @@ public class ScoreAction extends AnAction {
                 toolWindow.show(); // 打开工具窗口
             }
         }
-        String model = "gpt-3.5-turbo";
+        String model = "gpt-4";
         String replyLanguage = CommonUtil.getSystemLanguage();
         Project project = e.getProject();
         if (project != null) {
